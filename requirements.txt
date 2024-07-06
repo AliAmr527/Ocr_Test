@@ -2,4 +2,4 @@ Flask
 opencv-python
 cloudinary
 easyocr
-arabic-ocr-online==1.6
+arabic-ocr-online==1.7

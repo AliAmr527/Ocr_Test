@@ -8,9 +8,9 @@ RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://github.com/JaidedAI/EasyOCR/releases/download/v1.3/english_g2.zip
-RUN wget https://github.com/JaidedAI/EasyOCR/releases/download/pre-v1.1.6/craft_mlt_25k.zip
-RUN wget https://github.com/JaidedAl/EasyOCR/releases/download/pre-v1.1.6/arabic.zip
+RUN curl https://github.com/JaidedAI/EasyOCR/releases/download/v1.3/english_g2.zip
+RUN curl https://github.com/JaidedAI/EasyOCR/releases/download/pre-v1.1.6/craft_mlt_25k.zip
+RUN curl https://github.com/JaidedAl/EasyOCR/releases/download/pre-v1.1.6/arabic.zip
 RUN mkdir ~/.EasyOCR
 RUN mkdir ~/.EasyOCR/model
 RUN unzip english_g2.zip -d ~/.EasyOCR/model

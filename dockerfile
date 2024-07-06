@@ -8,15 +8,17 @@ RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
+# Set the working directory
+WORKDIR /app
+
 # Clone the repository
 RUN git clone https://github.com/AliAmr527/Ocr_Test /app
 
-# Set the working directory
-WORKDIR /app
+
 
 # Install Python dependencies
 RUN pip install -r requirements.txt \
     Flask[async]
 
 # Command to run your application
-CMD ["python", "working.py"]
+CMD python working.py

@@ -19,7 +19,14 @@ RUN chmod -R 777 /app
 RUN pip install -r requirements.txt \
     Flask[async]
 RUN mkdir -p /app/easyocr_model && \
-    cd /app/easyocr_model
+    cd /app/easyocr_model && \
+    curl -L -o latin.zip https://github.com/JaidedAI/EasyOCR/releases/download/v1.3/english_g2.zip && \
+    curl -L -o craft.zip https://github.com/JaidedAI/EasyOCR/releases/download/pre-v1.1.6/craft_mlt_25k.zip && \
+    curl -L -o arabic.zip https://github.com/JaidedAI/EasyOCR/releases/download/v1.7.1/arabic.zip\
+    unzip latin.zip && \
+    unzip craft.zip && \
+    unzip arabic.zip && \
+    rm latin.zip craft.zip arabic.zip
 
 # Set environment variable to fix EasyOCR permission issue
 ENV HOME=/app

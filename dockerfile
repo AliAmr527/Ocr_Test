@@ -13,6 +13,7 @@ RUN wget https://github.com/JaidedAI/EasyOCR/releases/download/pre-v1.1.6/craft_
 RUN mkdir ~/.EasyOCR
 RUN mkdir ~/.EasyOCR/model
 RUN unzip english_g2.zip -d ~/.EasyOCR/model
+RUN unzip arabic_g1.zip -d ~/.EasyOCR/model
 RUN unzip craft_mlt_25k.zip -d ~/.EasyOCR/model
 
 WORKDIR /app

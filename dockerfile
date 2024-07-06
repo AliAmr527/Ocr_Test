@@ -12,9 +12,11 @@ WORKDIR /app
 
 COPY . /app
 
+RUN chmod -R 777 /app
+
 # Install Python dependencies
 RUN pip install -r requirements.txt \
     Flask[async]
 
 # Command to run your application
-CMD python working.py
+CMD ["python", "working.py"]

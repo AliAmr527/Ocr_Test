@@ -11,7 +11,10 @@ import logging
 app = Flask(__name__)
 
 logging.basicConfig(level=logging.DEBUG)
-
+# Ensure the output directory exists
+output_dir = 'output'
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir, exist_ok=True)
 
 def convert_arabic_to_english_numbers(text):
     arabic_to_english = {

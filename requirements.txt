@@ -1,5 +1,4 @@
 Flask
-cloudinary
 opencv-python
 easyocr
 arabic-ocr-online==1.6

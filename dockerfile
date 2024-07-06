@@ -17,6 +17,8 @@ RUN chmod -R 777 /app
 # Install Python dependencies
 RUN pip install -r requirements.txt \
     Flask[async]
+# Set environment variable to fix EasyOCR permission issue
+ENV HOME=/app
 
 # Command to run your application
 CMD ["python", "working.py"]
